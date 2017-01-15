@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # This program is used to generate graphs of "Energy per Site vs. Temperature", 
-# "Magnetisation per Site vs. Temperature", "Specific Heat vs. Temperature" 
+# "Magnetisation per Site vs. Temperature", "Specific Heat Capacity per Site vs. Temperature" 
 # and "Susceptibility per Site vs. Temperature" using the 2D Ising Model.
 # A value for the Curie Temperature will be extrapolated from these graphs.
 
@@ -34,14 +34,14 @@ Susceptibility = np.zeros(150)
 
 for m in range(len(T)):
     
-    # All of the observables have been set to 0. Once thermalisation conditions have been met,
+    # All of the observables have been set to 0. Once the thermalisation condition has been met,
     # these values will start to update.
     E = M = E2 = M2 = 0
      
     lattice = np.random.choice([-1, 1], size=(N,N))
     
     # Spins on the lattice are updated 5000 times in order to satisfy
-    # thermilisation conditions.
+    # the thermilisation condition.
     for i in range(5000):
         lattice = eq.Update_Lattice(lattice, T[m])
     
