@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # This program is used to update a lattice of random spins using the Metropolis Algorithm.
-# As each spins is updated, an image of the new lattice is saved to a directory on my computer.
+# As each spin is updated, an image of the new lattice is saved to a directory on my computer.
 # These images will be used in a bash script in order to generate a gif of the lattice updating.
 
 
@@ -21,6 +21,7 @@ temperature = 0.1
 
 t = 0
 
+# This loop saves an image of the lattice after each spin is updated.
 while t <= 10000:
    plt.figure()
    plt.imshow(lattice, cmap='gray', vmin=-1, vmax=1, interpolation='none')
